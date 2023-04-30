@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "66ca1fc5-1d98-45db-bf25-db9d3cb7eee3",
+		"name": "LaravelExample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "13554273"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{Url}}/user/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{Url}}/user/register"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Store Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|CswtAJrOVmxZEQkx8w7uOMhbjmytN4KOxgUnqBnm",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "testtitle",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "sadfsadfasdfhkjahsdfasd;",
+									"type": "text"
+								},
+								{
+									"key": "files[]",
+									"type": "file",
+									"src": "/C:/Users/Harsh/Downloads/SampleVideo_1280x720_1mb.mp4"
+								},
+								{
+									"key": "files[]",
+									"type": "file",
+									"src": "/C:/Users/Harsh/Downloads/SampleVideo_1280x720_2mb.mp4"
+								}
+							]
+						},
+						"url": "{{Url}}/post/store"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|CswtAJrOVmxZEQkx8w7uOMhbjmytN4KOxgUnqBnm",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "sdfsdf",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "safdsadfsdfsdfsdfasdfasfasfdasdfasdfsadfasdfasdf",
+									"type": "text"
+								},
+								{
+									"key": "files[]",
+									"type": "file",
+									"src": "/C:/Users/Harsh/Downloads/IMG_20221028_125528 (2).jpg"
+								}
+							]
+						},
+						"url": "{{Url}}/post/update/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Show Post",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|CswtAJrOVmxZEQkx8w7uOMhbjmytN4KOxgUnqBnm",
+								"type": "text"
+							}
+						],
+						"url": "{{Url}}/post/show/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Post Collection",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|CswtAJrOVmxZEQkx8w7uOMhbjmytN4KOxgUnqBnm",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Url}}/post/list",
+							"host": [
+								"{{Url}}"
+							],
+							"path": [
+								"post",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "-1",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "sdsdsd",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|CswtAJrOVmxZEQkx8w7uOMhbjmytN4KOxgUnqBnm",
+								"type": "text"
+							}
+						],
+						"url": "{{Url}}/post/delete/8"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Voot",
+			"item": [
+				{
+					"name": "Up Voot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|x3NpEd3s7LuFuoptDmZhS7U9inDB4ho0GYUSfP8a",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "post_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "up_voot",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{Url}}/voot/up-voot"
+					},
+					"response": []
+				},
+				{
+					"name": "Down Voot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|x3NpEd3s7LuFuoptDmZhS7U9inDB4ho0GYUSfP8a",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "post_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "down_voot",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{Url}}/voot/down-voot"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|CswtAJrOVmxZEQkx8w7uOMhbjmytN4KOxgUnqBnm",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "post_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "parent_comment_id",
+									"value": "27",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "comment",
+									"value": "zcxzczxcasadasdweq",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Harsh/Downloads/IMG-20220411-WA0013.jpg"
+								}
+							]
+						},
+						"url": "{{Url}}/comment/store"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|vJTFRhOAnlqrerT0B94DcQmHhIkx5WiXTu6s9PqP",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "comment",
+									"value": "eweee",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{Url}}/comment/update/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Comment Deleted",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|CswtAJrOVmxZEQkx8w7uOMhbjmytN4KOxgUnqBnm",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": "{{Url}}/comment/delete/10"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Url",
+			"value": "http://localhost/LarExample/public/api",
+			"type": "string"
+		}
+	]
+}
