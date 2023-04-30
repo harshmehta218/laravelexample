@@ -8,6 +8,7 @@ use App\Service\PostService;
 use App\Http\Requests\Post\Create;
 use App\Http\Requests\Post\Update;
 use App\Http\Resources\Post\PostCollection;
+use App\Http\Resources\Post\PostResource;
 
 class PostController extends Controller
 {
@@ -27,19 +28,19 @@ class PostController extends Controller
     public function store(Create $request)
     {
         $data = $this->service->store($request);
-        return $data;
+        return new PostResource($data);
     }
 
     public function show($id)
     {
         $data = $this->service->show($id);
-        return $data;
+        return new PostResource($data);
     }
 
     public function update(Update $request, $id)
     {
         $data = $this->service->update($request, $id);
-        return $data;
+        return new PostResource($data);
     }
 
     public function destroy($id)
